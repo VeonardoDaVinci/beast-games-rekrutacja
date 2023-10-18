@@ -11,12 +11,12 @@ public class WeaponFeedback : MonoBehaviour
     [SerializeField] private Vector3 endLocalRotation;
     private void OnEnable()
     {
+        weapon = GetComponent<Weapon>();
         weapon.transform.localPosition = Vector3.zero;
         weapon.transform.localEulerAngles = Vector3.zero;
     }
     void Start()
     {
-        weapon = GetComponent<Weapon>();
         weapon.AttackEvent.AddListener(()=>StartCoroutine(AttackFeedback()));
     }
 

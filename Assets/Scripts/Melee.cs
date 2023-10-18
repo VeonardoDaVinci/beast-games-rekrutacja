@@ -9,6 +9,13 @@ public class Melee : Weapon
     {
         if (!CanAttack) return;
         base.Attack();
-        //Debug.Log("Doing melee attack with a " + WeaponName +" for " + WeaponDamage + " damage.");
+        RaycastHit raycastHit;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out raycastHit, attackRange))
+        {
+            if (HitObject = raycastHit.collider.GetComponent<Damagable>())
+            {
+                HitObject.TryDamage(this);
+            }
+        }
     }
 }

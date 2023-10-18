@@ -7,11 +7,13 @@ using UnityEngine.Events;
 public abstract class Weapon : MonoBehaviour
 {
     [field: SerializeField] public string WeaponName { get; protected set; }
-    [field: SerializeField] public float WeaponDamage { get; protected set; }
-    [field: SerializeField] public DamageType DamageType { get; protected set; }
+    [field: SerializeField] public float DamagePoints { get; protected set; }
     [field: SerializeField] public float AttackCooldown { get; protected set; } = 0;
+    [field: SerializeField] public DamageType DamageType { get; protected set; }
+    [field: SerializeField] public Damagable HitObject { get; protected set; }
     public UnityEvent AttackEvent;
-    public bool CanAttack { get; protected set; } = true;
+    protected bool CanAttack { get; set; } = true;
+
     public virtual void Attack()
     {
         AttackEvent?.Invoke();
