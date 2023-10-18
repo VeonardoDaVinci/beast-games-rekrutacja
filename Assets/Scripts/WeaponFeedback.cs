@@ -9,6 +9,11 @@ public class WeaponFeedback : MonoBehaviour
     private Weapon weapon;
     [SerializeField] private Vector3 endLocalPosition;
     [SerializeField] private Vector3 endLocalRotation;
+    private void OnEnable()
+    {
+        weapon.transform.localPosition = Vector3.zero;
+        weapon.transform.localEulerAngles = Vector3.zero;
+    }
     void Start()
     {
         weapon = GetComponent<Weapon>();

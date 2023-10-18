@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 192317684}
   - component: {fileID: 192317683}
   - component: {fileID: 192317686}
-  - component: {fileID: 192317689}
   - component: {fileID: 192317688}
   - component: {fileID: 192317687}
   m_Layer: 0
@@ -322,38 +321,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &192317689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192317682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142e8b400f783e045bd2ceb3a815e0a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LeftMouseButton:
-    m_Name: Left Mouse Button
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 4633546f-dafb-43a5-ada8-de88964079f2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  RightMouseButton:
-    m_Name: Right Mouse Button
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0f552df2-5859-46fb-a121-2c4c76698d5e
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  weapons: []
-  weaponGUI: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,21 +638,6 @@ PrefabInstance:
     - target: {fileID: 2077718081522862828, guid: 51d13643b573ca040b245ed8868e39a2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5356214330754842950, guid: 51d13643b573ca040b245ed8868e39a2,
-        type: 3}
-      propertyPath: endLocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5356214330754842950, guid: 51d13643b573ca040b245ed8868e39a2,
-        type: 3}
-      propertyPath: endLocalRotation.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5356214330754842950, guid: 51d13643b573ca040b245ed8868e39a2,
-        type: 3}
-      propertyPath: endLocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1015,16 +967,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7550144884599916023, guid: d4a3c65064836bb4ea2d3603a7ed67a2,
-        type: 3}
-      propertyPath: endRotation.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7550144884599916023, guid: d4a3c65064836bb4ea2d3603a7ed67a2,
-        type: 3}
-      propertyPath: endLocalRotation.x
-      value: 90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1110,16 +1052,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427099600648429005, guid: 57c7627d3524bfd4c9da9bb6308d62bb,
-        type: 3}
-      propertyPath: endLocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427099600648429005, guid: 57c7627d3524bfd4c9da9bb6308d62bb,
-        type: 3}
-      propertyPath: endLocalPosition.z
-      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -49,7 +49,7 @@ MonoBehaviour:
   <WeaponName>k__BackingField: Axe
   <WeaponDamage>k__BackingField: 10
   <DamageType>k__BackingField: 1
-  <AttackCooldown>k__BackingField: 2
+  <AttackCooldown>k__BackingField: 1
   AttackEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -67,6 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feedbackCycleTime: 1
+  endLocalPosition: {x: 0, y: 0, z: 0}
+  endLocalRotation: {x: 90, y: 0, z: 0}
 --- !u!1 &3970013341880554842
 GameObject:
   m_ObjectHideFlags: 0

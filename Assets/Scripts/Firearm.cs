@@ -17,7 +17,6 @@ public class Firearm : Weapon
         }
         projectilesLeft--;
         base.Attack();
-        //Debug.Log("Fiering weapon");
     }
 
     private void Reload()
