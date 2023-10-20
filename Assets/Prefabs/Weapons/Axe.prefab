@@ -47,13 +47,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <WeaponName>k__BackingField: Axe
-  <WeaponDamage>k__BackingField: 10
-  <DamageType>k__BackingField: 1
+  <DamagePoints>k__BackingField: 1
   <AttackCooldown>k__BackingField: 1
+  <DamageType>k__BackingField: 1
+  <HitObject>k__BackingField: {fileID: 0}
   AttackEvent:
     m_PersistentCalls:
-      m_Calls: []
-  attackRange: 1
+      m_Calls:
+      - m_Target: {fileID: 7550144884599916023}
+        m_TargetAssemblyTypeName: VisualFeedback, Assembly-CSharp
+        m_MethodName: StartAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  attackRange: 2
+  attackDelay: 0.1
 --- !u!114 &7550144884599916023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,9 +80,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35b9a6b27eb18d4ba46b83845b7743f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feedbackCycleTime: 1
-  endLocalPosition: {x: 0, y: 0, z: 0}
-  endLocalRotation: {x: 90, y: 0, z: 0}
+  startCycleTime: 0.2
+  endCycleTime: 0.8
+  tweenLocalPosition: {x: 0, y: 0, z: 0}
+  tweenLocalRotation: {x: 90, y: 0, z: 0}
+  tweenScale: {x: 1, y: 1, z: 1}
 --- !u!1 &3970013341880554842
 GameObject:
   m_ObjectHideFlags: 0

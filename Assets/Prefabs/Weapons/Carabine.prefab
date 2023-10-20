@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3109333035183306811}
   - component: {fileID: 6722569718774702508}
   - component: {fileID: 3427099600648429005}
+  - component: {fileID: 7513786972759202867}
   m_Layer: 0
   m_Name: Carabine
   m_TagString: Untagged
@@ -47,13 +48,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <WeaponName>k__BackingField: AKM
-  <WeaponDamage>k__BackingField: 15
-  <DamageType>k__BackingField: 0
+  <DamagePoints>k__BackingField: 1
   <AttackCooldown>k__BackingField: 0.2
+  <DamageType>k__BackingField: 0
+  <HitObject>k__BackingField: {fileID: 0}
   AttackEvent:
     m_PersistentCalls:
-      m_Calls: []
-  magazineCapacity: 30
+      m_Calls:
+      - m_Target: {fileID: 3427099600648429005}
+        m_TargetAssemblyTypeName: VisualFeedback, Assembly-CSharp
+        m_MethodName: StartAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ReloadEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7513786972759202867}
+        m_TargetAssemblyTypeName: VisualFeedback, Assembly-CSharp
+        m_MethodName: StartAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  magazineCapacity: 10
   reloadCooldown: 1
 --- !u!114 &3427099600648429005
 MonoBehaviour:
@@ -67,9 +96,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35b9a6b27eb18d4ba46b83845b7743f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feedbackCycleTime: 0.2
-  endLocalPosition: {x: 0, y: 0, z: -0.5}
-  endLocalRotation: {x: 0, y: 0, z: 0}
+  startCycleTime: 0.1
+  endCycleTime: 0.1
+  tweenLocalPosition: {x: 0, y: 0, z: -0.1}
+  tweenLocalRotation: {x: 0, y: 0, z: 0}
+  tweenScale: {x: 1, y: 1, z: 1}
+--- !u!114 &7513786972759202867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3109333035183306810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35b9a6b27eb18d4ba46b83845b7743f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCycleTime: 0.4
+  endCycleTime: 0.6
+  tweenLocalPosition: {x: 0, y: 0, z: 0}
+  tweenLocalRotation: {x: 0, y: 0, z: 90}
+  tweenScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4273541696859078545
 GameObject:
   m_ObjectHideFlags: 0

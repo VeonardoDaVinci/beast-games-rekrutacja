@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool isAccelerating = false;
     private Rigidbody playerRigidBody;
-    private Vector3 playerSize;
     private Vector3 walkVelocity;
     private Vector2 cameraAngles;
     private Vector3 movementDirection;
@@ -24,12 +24,10 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         playerRigidBody = GetComponent<Rigidbody>();
-        playerSize = GetComponent<Collider>().bounds.extents;
         movementInput.performed += MovementInput_performed;
         movementInput.canceled += MovementInput_canceled;
     }
 
-    private bool isAccelerating = false;
     private void MovementInput_performed(InputAction.CallbackContext callback)
     {
         isAccelerating = true;
