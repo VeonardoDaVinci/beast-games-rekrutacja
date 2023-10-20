@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         cameraAngles.y = Mathf.Clamp(cameraAngles.y, -90f, 90f);
     }
-    private void HandleMovement()
+    private void GetMovementDirection()
     {
          movementDirection = transform.forward * movementInput.ReadValue<Vector2>().y + transform.right * movementInput.ReadValue<Vector2>().x;
     }
@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
     private void HandleDeceleration()
     {
         if (isAccelerating) return;
-
         walkVelocity -= new Vector3(walkVelocity.x, 0f, walkVelocity.z).normalized * 10f * Time.deltaTime;
         if (Mathf.Abs(walkVelocity.x) < 0.1f)
         {
@@ -80,10 +79,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleLook();
+        GetMovementDirection();
     }
     private void FixedUpdate()
     {
-        HandleMovement();
         HandleAcceleration();
         HandleDeceleration();
         ApplyVelocity();

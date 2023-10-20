@@ -23,7 +23,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599508992365647576}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,6 +30,7 @@ Transform:
   m_Children:
   - {fileID: 4660194420433437150}
   m_Father: {fileID: 8716205175426963851}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2077718081522862827
 GameObject:
@@ -57,7 +57,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077718081522862827}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -65,6 +64,7 @@ Transform:
   m_Children:
   - {fileID: 8716205175426963851}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8600122874911163714
 MonoBehaviour:
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <WeaponName>k__BackingField: Staff
-  <DamagePoints>k__BackingField: 1
+  <DamagePoints>k__BackingField: 2
   <AttackCooldown>k__BackingField: 1
   <DamageType>k__BackingField: 2
   <HitObject>k__BackingField: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  attackRange: 2
+  attackRange: 3
   attackDelay: 0.2
 --- !u!114 &5356214330754842950
 MonoBehaviour:
@@ -140,7 +140,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3970013341880554842}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -148,13 +147,13 @@ Transform:
   m_Children:
   - {fileID: 3331377270812806351}
   m_Father: {fileID: 2077718081522862828}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5127048417252222517
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 3331377270812806351}
     m_Modifications:
     - target: {fileID: -8762315043907226958, guid: 9b52abadf2993f64fa8adba51b844b1c,
@@ -233,9 +232,6 @@ PrefabInstance:
       value: Aurous
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b52abadf2993f64fa8adba51b844b1c, type: 3}
 --- !u!4 &4660194420433437150 stripped
 Transform:
