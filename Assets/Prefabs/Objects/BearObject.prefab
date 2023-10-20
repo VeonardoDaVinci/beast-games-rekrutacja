@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9066055312066160522}
   - component: {fileID: 4619178355764192204}
   - component: {fileID: 8802748060489214163}
+  - component: {fileID: 1924140421}
   m_Layer: 0
   m_Name: BearObject
   m_TagString: Untagged
@@ -26,7 +27,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5492631480756176866}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,6 +35,7 @@ Transform:
   - {fileID: 6973841073063709132}
   - {fileID: 1058547778593874238}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &9066055312066160522
 BoxCollider:
@@ -44,18 +45,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5492631480756176866}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.2, z: 1.77}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0.58, z: 0}
 --- !u!114 &4619178355764192204
 MonoBehaviour:
@@ -72,15 +65,27 @@ MonoBehaviour:
   <ObjectMaterial>k__BackingField: {fileID: 11400000, guid: 2dbfabdf4e4c15946ba27fc73dd25717,
     type: 2}
   <HealthPoints>k__BackingField: 4
-  DestroyEvent:
-    m_PersistentCalls:
-      m_Calls: []
   DamageEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8802748060489214163}
         m_TargetAssemblyTypeName: VisualFeedback, Assembly-CSharp
         m_MethodName: StartAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DestroyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1924140421}
+        m_TargetAssemblyTypeName: ParticlesSpawner, Assembly-CSharp
+        m_MethodName: PlayParticles
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -107,12 +112,25 @@ MonoBehaviour:
   tweenLocalPosition: {x: 0, y: 0, z: 0}
   tweenLocalRotation: {x: 0, y: 0, z: 0}
   tweenScale: {x: 0.9, y: 0.9, z: 0.9}
+--- !u!114 &1924140421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492631480756176866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cefc9cd5ba6e8b4e9d3b27a4bf74a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleObjectPrefab: {fileID: 8579966591951127550, guid: afbaad5e885477641b7d006c2bf8125a,
+    type: 3}
 --- !u!1001 &431419370025572536
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 968001238787469723}
     m_Modifications:
     - target: {fileID: 7292658344771522932, guid: f5b41ba4c79702547a89de7544b80656,
@@ -191,9 +209,6 @@ PrefabInstance:
       value: Bear_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5b41ba4c79702547a89de7544b80656, type: 3}
 --- !u!4 &6973841073063709132 stripped
 Transform:
@@ -206,9 +221,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 968001238787469723}
     m_Modifications:
+    - target: {fileID: 4917028782823781111, guid: e92b9c7d00d75c244822ca83a874b0e4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4917028782823781111, guid: e92b9c7d00d75c244822ca83a874b0e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -345,9 +364,6 @@ PrefabInstance:
       value: ObjectHelp (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e92b9c7d00d75c244822ca83a874b0e4, type: 3}
 --- !u!4 &1058547778593874238 stripped
 Transform:

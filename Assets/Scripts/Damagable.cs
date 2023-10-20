@@ -9,17 +9,17 @@ public class Damagable : MonoBehaviour
     [field:SerializeField] public float HealthPoints { get; private set; }
     public UnityEvent DamageEvent;
     public UnityEvent DestroyEvent;
-
     public void TryDamage(Weapon weapon)
     {
-        if(!ObjectMaterial.CheckIfDamagable(weapon.DamageType)) return;
-        Debug.Log(name);
+        if (!ObjectMaterial.CheckIfDamagable(weapon.DamageType)) return;
         HealthPoints -= weapon.DamagePoints;
         DamageEvent?.Invoke();
-        if(HealthPoints <= 0)
+        if (HealthPoints <= 0)
         {
             DestroyEvent?.Invoke();
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
     }
+
+    
 }

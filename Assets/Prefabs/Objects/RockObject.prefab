@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6715763958751667786}
   - component: {fileID: 133479192314283467}
   - component: {fileID: 3714507577606876041}
+  - component: {fileID: 1341045515}
   m_Layer: 0
   m_Name: RockObject
   m_TagString: Untagged
@@ -26,7 +27,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6001047847382014810}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 3.899}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,6 +35,7 @@ Transform:
   - {fileID: 1940760735448682390}
   - {fileID: 588075949615371302}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6715763958751667786
 BoxCollider:
@@ -44,19 +45,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6001047847382014810}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.758026, z: 1.272579}
-  m_Center: {x: 0, y: 0.4200228, z: -0.03086245}
+  serializedVersion: 2
+  m_Size: {x: 1.2126735, y: 2, z: 1.304802}
+  m_Center: {x: 0.020452201, y: 0.42002273, z: 0.012729645}
 --- !u!114 &133479192314283467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,15 +65,27 @@ MonoBehaviour:
   <ObjectMaterial>k__BackingField: {fileID: 11400000, guid: 61ffd537a682b52449c6452bde17e891,
     type: 2}
   <HealthPoints>k__BackingField: 6
-  DestroyEvent:
-    m_PersistentCalls:
-      m_Calls: []
   DamageEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3714507577606876041}
         m_TargetAssemblyTypeName: VisualFeedback, Assembly-CSharp
         m_MethodName: StartAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DestroyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1341045515}
+        m_TargetAssemblyTypeName: ParticlesSpawner, Assembly-CSharp
+        m_MethodName: PlayParticles
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -107,12 +112,25 @@ MonoBehaviour:
   tweenLocalPosition: {x: 0, y: 0, z: 0}
   tweenLocalRotation: {x: 0, y: 0, z: 0}
   tweenScale: {x: 0.9, y: 0.9, z: 0.9}
+--- !u!114 &1341045515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001047847382014810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cefc9cd5ba6e8b4e9d3b27a4bf74a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleObjectPrefab: {fileID: 8579966591951127550, guid: afbaad5e885477641b7d006c2bf8125a,
+    type: 3}
 --- !u!1001 &4096194545473215183
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 8753740814873634440}
     m_Modifications:
     - target: {fileID: 2465277313695290713, guid: 8db78840ce7e78542b5fb00196f5edfe,
@@ -191,9 +209,6 @@ PrefabInstance:
       value: Rock_desert
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8db78840ce7e78542b5fb00196f5edfe, type: 3}
 --- !u!4 &1940760735448682390 stripped
 Transform:
@@ -206,9 +221,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 8753740814873634440}
     m_Modifications:
+    - target: {fileID: 4917028782823781111, guid: e92b9c7d00d75c244822ca83a874b0e4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4917028782823781111, guid: e92b9c7d00d75c244822ca83a874b0e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -345,9 +364,6 @@ PrefabInstance:
       value: ObjectHelp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e92b9c7d00d75c244822ca83a874b0e4, type: 3}
 --- !u!4 &588075949615371302 stripped
 Transform:

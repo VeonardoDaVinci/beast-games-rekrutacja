@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8729284894564094653}
   - component: {fileID: 8624051431748052525}
   - component: {fileID: 2274580952793688211}
+  - component: {fileID: 1263523562}
   m_Layer: 0
   m_Name: RobotObject
   m_TagString: Untagged
@@ -26,15 +27,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3637602825876439085}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9010412840988221593}
   - {fileID: 5802906669300780047}
+  - {fileID: 9010412840988221593}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8729284894564094653
 BoxCollider:
@@ -44,19 +45,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3637602825876439085}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5873333, y: 2.1782584, z: 0.73251414}
-  m_Center: {x: 0.0069410205, y: 1.0750914, z: 0.04726708}
+  serializedVersion: 2
+  m_Size: {x: 1.0236384, y: 2, z: 0.7649608}
+  m_Center: {x: 0.016361117, y: 1.0750914, z: 0.025725067}
 --- !u!114 &8624051431748052525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,15 +65,27 @@ MonoBehaviour:
   <ObjectMaterial>k__BackingField: {fileID: 11400000, guid: 5b78d863fe368ac48899271421ea74ae,
     type: 2}
   <HealthPoints>k__BackingField: 6
-  DestroyEvent:
-    m_PersistentCalls:
-      m_Calls: []
   DamageEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2274580952793688211}
         m_TargetAssemblyTypeName: VisualFeedback, Assembly-CSharp
         m_MethodName: StartAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DestroyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1263523562}
+        m_TargetAssemblyTypeName: ParticlesSpawner, Assembly-CSharp
+        m_MethodName: PlayParticles
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -107,12 +112,25 @@ MonoBehaviour:
   tweenLocalPosition: {x: 0, y: 0, z: 0}
   tweenLocalRotation: {x: 0, y: 0, z: 0}
   tweenScale: {x: 0.9, y: 0.9, z: 0.9}
+--- !u!114 &1263523562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637602825876439085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cefc9cd5ba6e8b4e9d3b27a4bf74a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleObjectPrefab: {fileID: 8579966591951127550, guid: afbaad5e885477641b7d006c2bf8125a,
+    type: 3}
 --- !u!1001 &1492058713983172344
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 6724209341606697149}
     m_Modifications:
     - target: {fileID: 4917028782823781111, guid: e92b9c7d00d75c244822ca83a874b0e4,
@@ -251,9 +269,6 @@ PrefabInstance:
       value: ObjectHelp (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e92b9c7d00d75c244822ca83a874b0e4, type: 3}
 --- !u!4 &5802906669300780047 stripped
 Transform:
@@ -266,9 +281,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 6724209341606697149}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 73ffbc06802a247cfb1b26f4ee67eba8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73ffbc06802a247cfb1b26f4ee67eba8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -350,9 +369,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: cd606ceeb10250448a86aebdd75b9a8b, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
 --- !u!4 &9010412840988221593 stripped
 Transform:

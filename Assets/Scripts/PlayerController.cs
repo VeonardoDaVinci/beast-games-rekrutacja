@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private InputAction movementInput;
     private bool isAccelerating = false;
+    private float maxWalkSpeed = 7f;
     private Rigidbody playerRigidBody;
     private Vector3 walkVelocity;
     private Vector2 cameraAngles;
     private Vector3 movementDirection;
-    [SerializeField] private InputAction movementInput;
 
     private void OnEnable()
     {
@@ -27,7 +28,6 @@ public class PlayerController : MonoBehaviour
         movementInput.performed += MovementInput_performed;
         movementInput.canceled += MovementInput_canceled;
     }
-
     private void MovementInput_performed(InputAction.CallbackContext callback)
     {
         isAccelerating = true;
@@ -36,50 +36,39 @@ public class PlayerController : MonoBehaviour
     {
         isAccelerating = false;
     }
-
     private void HandleLook()
     {
         cameraAngles += Mouse.current.delta.ReadValue() / 10f;
         ClampRotation();
         transform.rotation = Quaternion.Euler(new(0f, cameraAngles.x, 0f));
-        Camera.main.transform.rotation = Quaternion.Euler(new(-cameraAngles.y, cameraAngles.x, 0f));
+        Camera.main.transform.localRotation = Quaternion.Euler(new(-cameraAngles.y, 0f, 0f));
     }
-
     private void ClampRotation()
     {
         cameraAngles.y = Mathf.Clamp(cameraAngles.y, -90f, 90f);
     }
-
     private void HandleMovement()
     {
-        if (isAccelerating)
-        {
-            movementDirection = transform.forward * movementInput.ReadValue<Vector2>().y + transform.right * movementInput.ReadValue<Vector2>().x;
-        }
+         movementDirection = transform.forward * movementInput.ReadValue<Vector2>().y + transform.right * movementInput.ReadValue<Vector2>().x;
     }
-
-    private float maxWalkSpeed = 7f;
     private void HandleAcceleration()
     {
-        if (isAccelerating)
-        {
-            walkVelocity += movementDirection * 50f * Time.deltaTime;
-            walkVelocity = Vector3.ClampMagnitude(walkVelocity, maxWalkSpeed);
-        }
+        if (!isAccelerating) return;
+        walkVelocity += movementDirection * 50f * Time.deltaTime;
+        walkVelocity = Vector3.ClampMagnitude(walkVelocity, maxWalkSpeed);
     }
     private void HandleDeceleration()
     {
-        if (!isAccelerating)
+        if (isAccelerating) return;
+
+        walkVelocity -= new Vector3(walkVelocity.x, 0f, walkVelocity.z).normalized * 10f * Time.deltaTime;
+        if (Mathf.Abs(walkVelocity.x) < 0.1f)
         {
-            walkVelocity -= new Vector3(walkVelocity.x, 0f, walkVelocity.z).normalized * 10f * Time.deltaTime;
-            if (Mathf.Abs(walkVelocity.x) < 0.1f)
-            {
-                walkVelocity.x = 0f;
-            }
-            if (Mathf.Abs(walkVelocity.z) < 0.1f)
-            {
-                walkVelocity.z = 0f;
-            }
+            walkVelocity.x = 0f;
+        }
+        if (Mathf.Abs(walkVelocity.z) < 0.1f)
+        {
+            walkVelocity.z = 0f;
         }
     }
 
