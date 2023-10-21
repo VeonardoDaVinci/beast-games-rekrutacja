@@ -8,6 +8,7 @@ public class VisualFeedback : MonoBehaviour
     [Header("Animation timing")]
     [SerializeField] private float startCycleTime = 0.2f;
     [SerializeField] private float endCycleTime = 0.2f;
+
     [Header("Tween values")]
     [SerializeField] private Vector3 tweenLocalPosition = Vector3.zero;
     [SerializeField] private Vector3 tweenLocalRotation = Vector3.zero;
@@ -16,7 +17,6 @@ public class VisualFeedback : MonoBehaviour
     private Vector3 originalLocalPosition;
     private Vector3 originalEulerAngles;
     private Vector3 originalScale;
-
 
     private void Awake()
     {

@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     private void HandleDeceleration()
     {
         if (isAccelerating) return;
-        walkVelocity -= new Vector3(walkVelocity.x, 0f, walkVelocity.z).normalized * 10f * Time.deltaTime;
+        walkVelocity -= new Vector3(walkVelocity.x, 0f, walkVelocity.z).normalized * 25f * Time.deltaTime;
         if (Mathf.Abs(walkVelocity.x) < 0.1f)
         {
             walkVelocity.x = 0f;

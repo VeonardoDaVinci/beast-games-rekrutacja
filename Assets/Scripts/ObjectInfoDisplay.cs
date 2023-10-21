@@ -16,6 +16,5 @@ public class ObjectInfoDisplay : MonoBehaviour
             damageInfoDisplay.text += "\n";
             damageInfoDisplay.text += damageType.ToString();
         }
-        
     }
 }
