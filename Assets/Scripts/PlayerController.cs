@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputAction movementInput;
     private bool isAccelerating = false;
     private float maxWalkSpeed = 7f;
+    private float accelerationFactor = 50f;
+    private float decelerationFactor = 25f;
     private Rigidbody playerRigidBody;
     private Vector3 walkVelocity;
     private Vector2 cameraAngles;
@@ -51,16 +53,16 @@ public class PlayerController : MonoBehaviour
     {
          movementDirection = transform.forward * movementInput.ReadValue<Vector2>().y + transform.right * movementInput.ReadValue<Vector2>().x;
     }
-    private void HandleAcceleration()
+    private void Accelerate()
     {
         if (!isAccelerating) return;
-        walkVelocity += movementDirection * 50f * Time.deltaTime;
+        walkVelocity += movementDirection * accelerationFactor * Time.deltaTime;
         walkVelocity = Vector3.ClampMagnitude(walkVelocity, maxWalkSpeed);
     }
-    private void HandleDeceleration()
+    private void Decelerate()
     {
         if (isAccelerating) return;
-        walkVelocity -= new Vector3(walkVelocity.x, 0f, walkVelocity.z).normalized * 25f * Time.deltaTime;
+        walkVelocity -= new Vector3(walkVelocity.x, 0f, walkVelocity.z).normalized * decelerationFactor * Time.deltaTime;
         if (Mathf.Abs(walkVelocity.x) < 0.1f)
         {
             walkVelocity.x = 0f;
@@ -80,8 +82,8 @@ public class PlayerController : MonoBehaviour
     {
         HandleLook();
         GetMovementDirection();
-        HandleAcceleration();
-        HandleDeceleration();
+        Accelerate();
+        Decelerate();
     }
     private void FixedUpdate()
     {
