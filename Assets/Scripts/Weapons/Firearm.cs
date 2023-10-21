@@ -24,7 +24,6 @@ public class Firearm : Weapon
     }
     private void Reload()
     {
-        Debug.Log("Reload");
         ReloadEvent?.Invoke();
         StartCoroutine(StartCooldown(reloadCooldown));
         projectilesLeft = magazineCapacity;

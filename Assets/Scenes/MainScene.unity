@@ -794,10 +794,10 @@ RectTransform:
   m_Father: {fileID: 1404803751}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -661, y: 432}
-  m_SizeDelta: {x: 518.4303, y: 140.0823}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 299, y: -108}
+  m_SizeDelta: {x: 518.4303, y: 140.08228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444729081
 MonoBehaviour:
@@ -850,8 +850,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -984,6 +984,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220349337203306030, guid: 313fa6639caf8f043b8fcb64f9e3a297,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5220349337203306031, guid: 313fa6639caf8f043b8fcb64f9e3a297,
         type: 3}
