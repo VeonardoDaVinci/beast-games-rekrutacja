@@ -35,7 +35,6 @@ public class Firearm : Weapon
         RaycastHit raycastHit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out raycastHit))
         {
-            Debug.Log(raycastHit.collider.name);
             if (HitObject = raycastHit.collider.GetComponent<Damagable>())
             {
                 HitObject.TryDamage(this);
