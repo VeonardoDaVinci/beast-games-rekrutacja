@@ -80,11 +80,11 @@ public class PlayerController : MonoBehaviour
     {
         HandleLook();
         GetMovementDirection();
+        HandleAcceleration();
+        HandleDeceleration();
     }
     private void FixedUpdate()
     {
-        HandleAcceleration();
-        HandleDeceleration();
         ApplyVelocity();
     }
 }
